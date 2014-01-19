@@ -1,4 +1,3 @@
-
 % 既存の音声透かし手法は適用できない
 To enable embedding annotations for audio/visual editing in audio data, we owe fundamental idea to convert a digital data into an acoustic representation to existing audio watermarking techniques.
 However, some significant differences between basic audio watermarking and embedding annotation for editing support make it difficult to apply existing watermarking techniques straightforwardly to our purpose.
@@ -13,7 +12,7 @@ Firstly, any requirements of extra equipment like special microphone and audio m
 Because our purpose is to support creators to make audio/visual contents, we should minimize hardware constraints and allow users to use our annotating technique with their favorite equipment for making content such as high-resolution camera and hi-fi audio recording system.
 % リアルタイム重畳が必要
 Secondly, host signal cannot be modified to embed data in our recording-time watermarking because host signal and annotation data are recorded simultaneously, unlike ordinary watermarking techniques take an existing content as a host signal to apply signal analysis and some modification such as phase-shifting for embedding data. % ToDo: because節の論理が不明瞭かも
-Recently some techniques called {\it real-time watermarking} have been presented. Though these techniques realize real-time embedding of watermarking in contents, these techniques are not suited for our purpose because they require extra equipment for digital signal processing.
+Recently some techniques called {\it real-time watermarking} have been presented. Though these techniques realize real-time embedding of watermarking in contents, they are not suited for our purpose because they require extra equipment for digital signal processing.
 % ToDo: referenceを付ける, 論文を詳しく読んで内容を検討する
 % 耐攻撃性は不要
 Thirdly, since our watermarks are used only in editing process, durability and transparency of watermarks is not very important, unlike ordinary watermarks are required to be hidden and resistant to elimination because most of them are embedded to contain essential information for preserving the content from abuses.

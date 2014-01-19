@@ -1,33 +1,34 @@
 \subsection{Video Understanding}
 % 動画コンテンツが増加して効率的な管理方法が必要になった
-Today, more and more audio/video contents are being created due to the popularization of smartphones with high-resolution cameras and the growth of video hosting services like YouTube.
-To retrieve contents needed by users from a huge collection of data, annotations describes detail information about contents are significantly useful for indexing and managing, however annotating contents is generally a very tiresome task for users.
-The explosively increasing amount of movies raises the demand for efficient methods for automatically annotating movie contents.
+% Today, more and more audio/video contents are being created due to the popularization of instruments for content creation like camera-equipped smartphones, and the growth of video hosting services such as YouTube.
+% To retrieve contents needed by users from a huge collection of data, annotations describing detail information about contents are significantly useful for indexing and managing them, however annotating contents manually is a very tiresome task for users generally.
+% The explosively increasing amount of movies raises the demand for efficient methods for automatically annotating movie contents.
 % video understandingが研究されてきた
-Video understanding have been studied to extract essential information about the scene (e.g. what/who are in the scene, what does occur, where is the video taken) automatically for sorting them by analyzing video using pattern recognition means.
+
+Video understanding have been studied to extract essential information about the scene (e.g. what/who are in the scene, what does occur, where is the video taken) automatically for sorting them by analyzing video using pattern recognition techniques.
 % 具体的な研究事例
 An early work by Sato analyzes news videos and extracts information from characters displayed by simply employing OCR techniques \cite{sato1998video}.
-Jaimes, Tseng and Smith proposed more comprehensive framework to extract the keyword of a movie, which integrates speech recognition, feature extraction and visual detection, by reasoning using rules constructed from multimedia knowledge bases and ontologies \cite{jaimes2003modal}.
+Jaimes, Tseng and Smith proposed more comprehensive framework to extract the keyword of a movie, which integrates speech recognition, feature extraction and visual detection, by reasoning with rules constructed from multimedia knowledge bases and ontologies \cite{jaimes2003modal}.
 
 \subsection{Recording Context with Content}
 % コンテンツ自体が持つ情報と同様、コンテンツが制作されたコンテキストは重要な情報を含む
-Since the context in which an image or a movie was recorded has important information to understand and manage them, same as the clues contained in a content itself, studies on methods to record contextual information along with the content have been carried out.
+Since the context in which an image or a movie was recorded has important information to understand and manage them, same as the clues contained in a content itself, studies on recording contextual information along with the content have been carried out.
 % willcam
 Watanabe developed a digital camera which captures and records various information such as location, temperature, ambient noise and photographer's facial impression, and provides the users with a means to indicate what is the interesting element in the picture for them \cite{Watanabe:2007:WDC:1240866.1241073}.
 % contextcam
-ContextCam by Patel and Abowd \cite{Patel04thecontextcam:} created a context-aware video camera for making an archive of home movies that provides time, location, person presence and event information associated with recorded video, using a collection of sensors and machine learning techniques for inferring higher-level information.
+ContextCam by Patel and Abowd \cite{Patel04thecontextcam:} is a context-aware video camera for making an archive of home movies that provides time, location, person presence and event information associated with recorded video, using a collection of sensors and machine learning techniques for inferring higher-level information.
 % 生成されたアノテーションはLSB埋め込みという原始的な手法でステガノグラフされる
 In the system of ContextCam, generated annotations are embedded in recorded video sequence using a primitive steganography technique, LSB encoding to video frames.
 % どちらの手法も特定のハードウェアとフォーマットを要求するので用途が限定される
-These works certainly enabled to record contextual information while shooting with a camera, but because both systems use specially made cameras and require a computer for the annotation embedment mechanisms, possible applications of these techniques are strongly limited by the hardware constraints.
+These works certainly enabled recording contextual information while shooting with a camera, however since both systems use a specially made camera and require a computer to embed annotations, possible applications of these techniques are strongly limited by the hardware restrictions.
 
 \subsection{Using Annotations for Content Creation}
 % アノテーションの多くはコンテンツの検索や整理など管理目的で利用されている
 % コンテンツ製作目的での映像へのアノテーション事例
-While the annotations made by techniques mentioned above are mainly used for managing existing contents, some annotations or metadata can be used for editing movies to create attaractive contents.
+While the annotations made by techniques mentioned above are mainly used for managing existing contents, some annotations can be used for editing movies to create attaractive contents.
 In 2003, Davis outlined an expected paradigm shift in media production in an article \cite{davis2003editing} that involves automated capturing, editing and reuse of video contents with active use of metadata.
-According to the article, movie materials would be {\it computable}, in other words, a considerable proportion of editing process would be replaced by computational process exploiting analyzed information of contents.
-His research group have developed a comprehensive system called Media Streams aiming construction of new movie contents by creating metadata describing the semantics of a video \cite{davis2000media}.
+According to the article, movie materials would be {\it computable}, in other words, a considerable proportion of manual editing process would be replaced by computational process exploiting analyzed information of contents.
+His research group have developed a comprehensive system called Media Streams aiming constructing new movie contents by creating metadata describing the semantics of videos \cite{davis2000media}.
 
-Nack pursued to enable automated editing of videos based on their thematic goals concerning syntax and semantics \cite{nack1997application}.
+Nack pursued automated editing system for videos based on their thematic goals concerning syntax and semantics \cite{nack1997application}.
 He presented a simplified editing model limited to deal with the theme of humour in his system AUTEUR, that creates humorous film sequence from video assets and a knowledge base about conceptual structures representing events and actions on movies.

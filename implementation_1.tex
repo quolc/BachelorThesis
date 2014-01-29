@@ -1,14 +1,14 @@
 % 共通で使用できるAndroid用ライブラリを作成した
 % ライブラリは次のようなアルゴリズムを使用している
-In the system of AnnoTone, watermark signals of annotations are generated and transmitted from a smartphone.
-We implemented a software library that provides essential functions for watermarking for creating android applications for AnnoTone system using following algorithm.
+In the system of AnnoTone, watermark signals are generated and transmitted from a smartphone.
+We implemented a software library that provides essential functions for watermarking that can be used to create android applications for AnnoTone using following algorithm.
 
 % 入力データに対してどのように処理を行うか
 % annotation -> byte array -> packet -> wave data
 % 位相変化時の低周波成分ノイズ発生を抑えるために窓関数を掛ける
 First, an annotation of any kind of data (e.g. GPS position, a situation of ball game) is serialized to an array of 4-bits data following the arrangement manner mentioned in the previous chapter.
 Secondly, a data stream of a packet is generated from the payload by calculating CRC-8 checksum.
-Thirdly, DTMF-modulated pcm wave is calculated using following formulae.
+Thirdly, DTMF-modulated pcm wave is generated using following formulae.
 
 $s(t, m)$ is the sample value of the m-th sub-carrier at timestamp $t$ (s) counted from the beginning of the wave. $f(m)$ is the frequency (Hz) of the m-th sub-carrier and $d(n)$ is the n-th 4-bits data of the payload.
 

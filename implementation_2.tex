@@ -5,6 +5,7 @@ We implemented a decoder library using following algorithm, which could be used 
 % 結果
 \begin{figure}[htbp]
  \begin{center}
+  \vspace{5mm}
   \includegraphics[width=140mm]{implementation_decode.pdf}
  \end{center}
  \caption{A schematic diagram of decoding algorithm.}
@@ -14,9 +15,9 @@ We implemented a decoder library using following algorithm, which could be used 
 % 形式を変換
 Firstly, any kind of input files such as MPEG-2 format movie are converted to pcm (.wav) file with 16 bit / 44100 Hz sampling format using an external audio/video converter such as ffmpeg \cite{ffmpeg}.
 % 各周波数ごとにBPF
-Secondly, input wave is filtered by band-pass filter (BPF) for each sub-carrier frequencies to extract each sub-carrier signals.
+Secondly, input wave is filtered by band-pass filters (BPFs) for each sub-carrier frequencies to extract each sub-carrier signals.
 In our implementation, BPFs are designed as 199-tap finite impulse response filters.
-After applying BPF, binary states of each sub-carriers can be decided by a method for demodulating amplitude-shift keying.
+After applying BPF, binary states of each sub-carriers can be decided by a method for demodulating amplitude-shift keying (ASK).
 % サンプル値の絶対値を取ってLPFに掛けてエンベロープを計算　
 Thirdly, approximate envelopes of each sub-carrier signals are calculated by applying low-pass filter to them after taking absolute values of samples.
 % エンベロープを簡単に２値化する
@@ -31,8 +32,8 @@ After this binarization, 4-bits values at each timestamp are scanned using the D
 If the number of active sub-carriers is fewer than two, 4-bits value is regarded as invalid  at the timestamp, and if more than two sub-carriers are active, two sub-carriers with highest envelope values at the timestamp are used to decide the 4-bits value.
 
 % 最後にパケット探索する
-Finally, each annotation packets are decoded from scanned 4-bits value stream.
-A start frame of a packet is identified by detecting successive appearance of fixed value ``2'' for the half length of a data frame.
+Finally, annotation packets are decoded from the scanned 4-bits value stream.
+A start frame of a packet is identified by successive appearance of fixed value ``2'' for the half length of a data frame.
 After identifying a start frame, values for each data frames in the packet are decided by seeing 4-bits values at intervals of 10 ms.
 % 続けて読み込むパケット長はlength frameから決定する
 The number of data frames to read continuously is decided from the second data frame of the packet.

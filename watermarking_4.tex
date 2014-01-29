@@ -10,12 +10,28 @@ An watermark of AnnoTone is modulated using DTMF technique mentioned above.
 It can contain any kinds of annotation data such as integer value, floating-point number, character string and set of them.
 Annotation data is serialized to a byte array and converted to a watermark packet structured as below.
 
+% スペクトログラム
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=120mm]{watermarking_spectrogram.png}
+ \end{center}
+ \caption{The signal spectrogram of a watermark packet that contains a geolocation data from GPS sensor.}
+ \label{fig:watr_spec}
+\end{figure}
+
 % データフレームの定義
 A data frame is the minimum unit of data representation in watermarking scheme of AnnoTone, which is a DTMF signal composed from two sinusoidal waves of the seven sub-carrier frequencies with length of 10 ms.
 Since each data frame represents 4-bits information from 0 to 15, a data of one byte is encoded into two data frames.
 The former frame represents lower four bits and the latter represents higher four bits of the data.
 
-% ToDo: パケット構造の模式図を描く
+% パケット模式図
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=120mm]{watermarking_packet.pdf}
+ \end{center}
+ \caption{Packet structure.}
+ \label{fig:watr_pack}
+\end{figure}
 
 % パケットの定義
 A packet is a set of several successive data frames representing an annotation data, and can be regarded identical to a watermark.

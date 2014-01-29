@@ -2,6 +2,15 @@
 Since DTMF modulation can be regarded as a special variety of frequency-shift keying (FSK), watermarks of AnnoTone embedded in media files can be extracted using common demodulation methods for FSK.
 We implemented a decoder library using following algorithm, which could be used by any kind of applications utilizing annotations for content editing.
 
+% 結果
+\begin{figure}[htbp]
+ \begin{center}
+  \includegraphics[width=140mm]{implementation_decode.pdf}
+ \end{center}
+ \caption{A schematic diagram of decoding algorithm.}
+ \label{fig:impl_decd}
+\end{figure}
+
 % 形式を変換
 Firstly, any kind of input files such as MPEG-2 format movie are converted to pcm (.wav) file with 16 bit / 44100 Hz sampling format using an external audio/video converter such as ffmpeg \cite{ffmpeg}.
 % 各周波数ごとにBPF

@@ -1,13 +1,6 @@
-\if0
-4-4. Acoustic DTMF in Inaudible Frequency Range
-	pg2. データフレームの定義
-	pg3. パケットの構造（データのエンディアンも）
-	※ CRCビットによる誤り検出手法を定める
-\fi
-
 % DTMFに関して多少の詳細説明
-An watermark of AnnoTone is modulated using DTMF technique mentioned above.
-It can contain any kinds of annotation data such as integer value, floating-point number, character string and set of them.
+A watermark of AnnoTone is modulated using DTMF technique mentioned above.
+It can contain any kind of annotation data such as integer value, floating-point number, character string, and set of them.
 Annotation data is serialized to a byte array and converted to a watermark packet structured as below.
 
 % スペクトログラム
@@ -20,13 +13,14 @@ Annotation data is serialized to a byte array and converted to a watermark packe
 \end{figure}
 
 % データフレームの定義
-A data frame is the minimum unit of data representation in watermarking scheme of AnnoTone, which is a DTMF signal composed from two sinusoidal waves of the seven sub-carrier frequencies with length of 10 ms.
+A data frame is the minimum unit of data representation in the watermarking scheme, and is a DTMF signal composed from two sinusoidal waves of the seven sub-carrier frequencies with length of 10 ms.
 Since each data frame represents 4-bits information from 0 to 15, a data of one byte is encoded into two data frames.
-The former frame represents lower four bits and the latter represents higher four bits of the data.
+The former frame represents the lower four bits and the latter represents the higher four bits of a byte.
 
 % パケット模式図
 \begin{figure}[htbp]
  \begin{center}
+  \vspace{5mm}
   \includegraphics[width=120mm]{watermarking_packet.pdf}
  \end{center}
  \caption{Packet structure.}
@@ -34,9 +28,9 @@ The former frame represents lower four bits and the latter represents higher fou
 \end{figure}
 
 % パケットの定義
-A packet is a set of several successive data frames representing an annotation data, and can be regarded identical to a watermark.
+A packet is a set of several successive data frames representing an annotation data.
 The data frame at the head of a packet is called start frame. It is fixed to represent ``2'', and it functions only as a sign of the start position of the packet. There is no special reason for choosing this number.
-The second data frame specifies the size of payload following it to be $ 2^n $ bytes where $n$ is the value of this data frame. It enables a payload size to vary depending on the type of an annotation. Consequently, the size of a packet can also vary.
+The second data frame specifies the length of payload region following it to be $ 2^n $ bytes where $n$ is the value of this data frame. It enables a payload size to vary depending on the type of an annotation. Consequently, the size of a packet can also vary.
 From the third data frame, a payload region containing the body of an annotation data starts and continues for the length specified in the second data frame.
 Multi-byte data such as integer values are ordered in little endian, and multiple data are arranged in their original order in a payload region.
 For example, an array of two short integer values \{0x1234, 0x5678\} would be arranged in a payload region as \{4, 3, 2, 1, 8, 7, 6, 5\}.

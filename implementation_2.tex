@@ -17,7 +17,7 @@ Firstly, any kind of input files such as MPEG-2 format movie are converted to pc
 % 各周波数ごとにBPF
 Secondly, input wave is filtered by band-pass filters (BPFs) for each sub-carrier frequencies to extract each sub-carrier signals.
 In our implementation, BPFs are designed as 199-tap finite impulse response filters.
-After applying BPF, binary states of each sub-carriers can be decided by a method for demodulating amplitude-shift keying (ASK).
+After applying BPF, binary states of each sub-carrier can be decided by a method for demodulating amplitude-shift keying (ASK).
 % サンプル値の絶対値を取ってLPFに掛けてエンベロープを計算　
 Thirdly, approximate envelopes of each sub-carrier signals are calculated by applying low-pass filter to them after taking absolute values of samples.
 % エンベロープを簡単に２値化する
@@ -33,7 +33,7 @@ If the number of active sub-carriers is fewer than two, 4-bits value is regarded
 
 % 最後にパケット探索する
 Finally, annotation packets are decoded from the scanned 4-bits value stream.
-A start frame of a packet is identified by successive appearance of fixed value ``2'' for the half length of a data frame.
+A start frame of a packet is identified by successive appearance of fixed value ``2'' for the half-length of a data frame.
 After identifying a start frame, values for each data frames in the packet are decided by seeing 4-bits values at intervals of 10 ms.
 % 続けて読み込むパケット長はlength frameから決定する
 The number of data frames to read continuously is decided from the second data frame of the packet.

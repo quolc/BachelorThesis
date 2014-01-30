@@ -4,9 +4,9 @@ In the post-production stage, a movie creator should do a lot of operations such
 Most of information needed for the process, such as when an actor appeared in a scene, are shown during the shooting, however, we cannot note all of them with ordinary equipment.
 
 % AnnoToneを使えば、そういう情報を録画中に埋め込んでおいて自動編集に使える
-Using AnnoTone, we can embed those kinds of information into a video in recording time, and conduct automatic editings after recording in accordance with the recorded annotations.
+Using AnnoTone, we can embed those kinds of information into a video in recording time, and conduct automatic editing after recording in accordance with the recorded annotations.
 % 映像から失敗の部分を自動で切り取る、とても簡単なアプリケーションを作成した。
-We created a very simple video editing application as a example of such usage, that automatically cut sections with mistakes off from a video.
+We created a very simple video-editing application as a example of such usage, that automatically cut sections with mistakes off from a video.
 
 \begin{figure}[htbp]
  \begin{center}
@@ -18,7 +18,7 @@ We created a very simple video editing application as a example of such usage, t
 \end{figure}
 
 % 使い方の説明
-A camera person repeatedly taps one of the two buttons displayed on the interface (Figure \ref{fig:appl_edit} Left) of a smartphone during shooting a video to embed annotations that indicate whether the recent performance was good or not.
+A cameraperson repeatedly taps one of the two buttons displayed on the interface (Figure \ref{fig:appl_edit} Left) of a smartphone during shooting a video to embed annotations that indicate whether the recent performance was good or not.
 After the shooting, video editing application detects the annotations and divides the video into a series of sections at the annotated points.
 Each section is marked ``OK'' or ``BAD'' based on the annotation that follows it, and sections marked ``BAD'' are cut off from the video.
 % Figureの説明

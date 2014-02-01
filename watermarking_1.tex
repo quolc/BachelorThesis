@@ -1,5 +1,5 @@
 % 既存の音声透かし手法は適用できない
-To enable embedding annotations for audio/visual editing in audio data, we owe fundamental idea to convert a digital data into an acoustic representation to existing audio watermarking techniques.
+To enable embedding annotations for audio/visual editing in audio data, we owe fundamental idea for converting a digital data into an acoustic representation to existing audio watermarking techniques.
 However, some significant differences between basic audio watermarking and embedding annotation for editing support make it difficult to apply the techniques straightforwardly to our purpose.
 
 % ビデオ録画時に埋め込むので要請が異なる
@@ -28,7 +28,7 @@ One problem is that, since certain frequency components of host signal would be 
 % 前提条件
 % ところで音声ファイルは44.1kHzで収録されるが、人は16kHzくらいまでしか聴こえない…
 Most of common media formats use 44.1 kHz as their audio sampling rate, and virtually all video cameras and audio recorders can record sounds in this rate. It means that we can record media files that contain sounds with frequency up to 22.05 kHz with common equipment, since a discrete signal can contain sampled signals with frequencies lower than half of its sampling rate, according to the Nyquist-Shannon sampling theorem \cite{shannon1949communication}.
-Human's hearing range is well-known to be between 20 Hz and 20 kHz, however some studies showed that absolute threshold of hearing (ATH) increases rapidly along with the frequency above 14 kHz and some people can not notice sounds above 18 kHz completely. \cite{:/content/asa/journal/jasa/86/4/10.1121/1.398698, ashihara2006hearing}
+Human's hearing range is well-known to be between 20 Hz and 20 kHz, but some studies showed that absolute threshold of hearing (ATH) increases rapidly along with the frequency above 14 kHz and some people can not notice sounds above 18 kHz completely. \cite{:/content/asa/journal/jasa/86/4/10.1121/1.398698, ashihara2006hearing}
 % in practice, sounds with frequencies higher than about 18000 Hz cannot noticed by ordinary people unless they are informed the appearance of sounds in advance.
 Because of these facts, digital data can be recorded in an audio sequence almost imperceptibly to human with common video cameras, if they are converted to audio signals with frequencies between about 18 kHz and 22 kHz.
 

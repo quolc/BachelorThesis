@@ -6,7 +6,7 @@ We implemented a software library that provides essential functions for watermar
 % 入力データに対してどのように処理を行うか
 % annotation -> byte array -> packet -> wave data
 % 位相変化時の低周波成分ノイズ発生を抑えるために窓関数を掛ける
-First, an annotation of any kind of data (e.g. GPS position, a situation of ball game) is serialized to an array of 4-bits data following the arrangement manner mentioned in the previous chapter.
+First, an annotation of any kind of data (e.g. GPS position, a situation of ball game) is serialized to a payload, an array of 4-bits data following the arrangement manner mentioned in the previous chapter.
 Secondly, a data stream of a packet is generated from the payload by calculating CRC-8 checksum.
 Thirdly, DTMF-modulated pcm wave is generated using following formulae.
 

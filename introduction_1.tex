@@ -4,7 +4,7 @@ Today, more and more audio/video contents are being created due to the populariz
 % demand 1 : 多量の映像に対して適切なアノテーションを付与すること（既存の問題意識）
 % 管理を楽にするために、自動的なアノテーション技術が求められている
 To retrieve contents needed by users from a huge collection of data, annotations describing detail information about contents are significantly useful for indexing and managing them, but annotating contents manually is a very tiresome task for users generally.
-The explosively increasing amount of audio/video contents raises the demand for efficient methods for automatically annotating contents.
+The explosively increasing amount of audio/video contents raises the demand for efficient methods for annotating contents.
 % 動画の場合は一つのcontentの中に様々なシーンが含まれている
 % それに加えてそれらのタイミングにも重要な情報があるので、写真とは異なり時系列順のアノテーションが必要
 Typically a movie has more than one scene with different situations, and the arrangement of them is important for the meaning of the content, therefore a movie should be given a series of annotations associated with timestamps of the content, unlike common metadata formats like exchangeable image format (EXIF), which contain only a fixed set of information.
@@ -14,18 +14,18 @@ Typically a movie has more than one scene with different situations, and the arr
 %  -> ユーザー個々人が撮影するビデオコンテンツの量自体が単純に増している
 %  -> 車載カメラやウェアラブルカメラなど、ライフログあるいはコンテンツ制作目的での長時間録画が増えている
 Popularization of camera-equipped devices like smartphones made recording video into an everyday activity for noncreators, and the total duration of recorded movies per person has been largely increased.
-Presence of small cameras that can be attached to cars, bikes and human bodies also enabled long-duration recording, or logging, of certain kinds of activities such as sports, or whole life of a person.
-Videos captured by in-vehicle cameras are broadly used for investigating traffic accidents, and the valuable usage of videos that record daily life is actively discussed in the field of life-log research for enhancing quality of life.
+Presence of small cameras that can be attached to cars, bikes and human bodies also enabled long-duration recording, or logging, of certain kinds of activities such as sports.
+Videos captured by in-vehicle cameras are broadly used for investigating traffic accidents, and valuable usages of videos that record daily life is actively discussed in the field of life-log research for enhancing quality of life.
 % demand 2 : 長時間映像に対する編集の支援
 % こうした映像からはコンテンツとして魅力的な部位を切り出すだけでも非常な手間が掛かる
 % こうした長時間映像からの映像コンテンツの制作には時系列への意味的な対応付けが必要
-These videos also have large potential as materials for creating attractive movie contents, however, the excessive amounts of them make it difficult to extract meaningful scenes from them by traditional authoring environment.
-To exploit the values of these movies, appropriate annotations that describe semantic information about scenes are heavily needed.
+These videos may also have large potential as materials for creating attractive movie contents, however, the excessive amounts of them make it difficult to deal with them by traditional authoring environment.
+To exploit the values of these videos, appropriate annotations that describe semantic information about scenes are heavily needed.
 
 % こうした理由により、動画の利用が増えるほどに、多機能なアノテーション機構は今後ますます需要が生じると考えられる。
-For the reasons mentioned above, the demand for mechanism to annotate a movie with contextual information in recording-time would continue to increase from now on with the use of camera devices getting more popular.
+For the reasons mentioned above, the demand for mechanism to annotate a video with contextual information in recording-time would continue to increase from now on with the use of camera devices getting more diverse.
 % また、リッチなメタデータが利用できると、通常の動画編集でも様々な新しい操作手法が可能になる。
 Additionally, if rich metadata were provided in videos, various intuitive interaction methods for movie authoring concerning the semantics of contents would get available. 
 For example, a series of geolocation information associated with timestamps of a video captured by in-vehicle camera would enable clipping video using spatial queries like ``from location A to location B''.
 % 我々の目的は、簡便で誰もが使いやすいアノテーション手法を開発することで、動画コンテンツ制作の新たな在り方を提案することである
-Our motivation in the research is to suggest new styles of movie content creation using rich metadata by proposing a video annotation method that can be easily used by every camera user.
+Our motivation in this research is to suggest new styles of movie content creation using rich metadata by proposing a video annotation method that can be easily used by every camera user.

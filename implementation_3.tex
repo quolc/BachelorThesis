@@ -1,10 +1,10 @@
 % extractionと同じ方法で透かしの存在する区間を確認する
 % 透かし区間に対して各周波数帯のBEFを適用する
-Because watermark are embedded in a limited frequency range, their signal intensities can be decreased using an appropriate filter that attenuates signals of the sub-carrier frequencies.
-We implemented a watermark deletion program that simply applies low-pass filter with 17,000 kHz cut-off frequency to an input sound.
+Because watermarks are embedded in a limited frequency range, their signal intensities can be decreased using an appropriate filter that attenuates signals of the sub-carrier frequencies.
+We implemented a watermark deletion program that simply applies low-pass filter with 17,000 Hz cut-off frequency to input sounds.
 % 下記の実験に示すようにこの簡単な手法でほぼ完全に不可聴にできるが、デコードは可能であった
 As demonstrated in the following chapter, this elimination method can make watermarks inaudible almost completely, but part of them can be decoded even after the elimination.
 % 完全に情報を復元できないようにwatermarkを消すには、この成分を完全に除去する必要がある
-In order to completely remove watermark signals from a file, we can do downsampling to get rid of the information of sub-carriers at the expense of listening quality.
+In order to completely remove watermark signals from an audio track, we can do downsampling to get rid of the information of sub-carriers at the expense of sound quality.
 % サンプリングレートを落としたりmp3にすると消えることがわかっているが、音質は落ちる
 Additionally, we found that compressing an audio file to a MP3 format with a bit rate below 160 kbps removes high-frequency components almost completely from the signal, therefore this also can be used to delete watermarks from a media file.

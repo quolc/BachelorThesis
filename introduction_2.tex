@@ -1,24 +1,21 @@
 % エンコーダ・デコーダを実装し、実用的なアプリケーションを制作した
 To achieve this motivation, we developed a system named AnnoTone that consists of a set of programs to embed annotations in videos and extract them, and created several examples of video editing applications using annotations to show the usefulness of our technique.
-Because we thought that our annotation method should be available for various kinds of applications depending on the purposes of users, embedment and extraction programs were developed as a software library that can be used from any applications.
-Our system was tested using actual hardware setup including a consumer-use camcorder and a smartphone. %attached to it for embedding annotation.
 
 % annotation技術についての概説 ... watermarkingの使用, プロトコルの特長, デコーダの実装
 We designed our annotation method utilizing digital audio watermarking, a technique to convert digital data to a form of sounds, to embed data into the audio sequence of a video recording.
-Since annotations are embedded as sounds that can be recorded by ordinary microphone, our technique does not need any special equipment.
+Since annotations are embedded as sounds that can be recorded by an ordinary microphone, our technique can be used with any equipment. %does not need any special equipment.
 Audio watermarking also has an advantage in the synchrony between an annotation and a timestamps of a video because annotations are embedded directly in the time series of a content.
-We designed the protocol for representing data with audio watermarks to be especially suited for creating movie contents, for example, watermarks are made removable from a movie unlike ordinary watermarking techniques, because they may become unnecessary after being used in editing process.
+We designed the protocol for representing data with audio watermarks to be especially suited for creating movie contents;
+for example, watermarks are made removable from a movie unlike ordinary watermarking techniques, because they may become unnecessary after being used in editing process.
 
 % 実装したアプリケーションについての概説
 We created three applications using our annotation system, and each of them show different possible scenarios of using annotations for movie content creation.
-First application enables automatic cutting by splitting a video into shorter movie clips at the positions indicated by embedded annotations.
-Each clips are given additional information that direct how to edit.
-Second application embeds geolocations of a camcorder into a video sequence every five seconds to exploit spatial information of a video recording for providing intuitive editing experience.
-It can visualize the route of a recorder in a map user interface and clip a section of a video by selecting a part of visualized route in the map.
-Third application automatically overlay captions on a video of a board game using annotations denoting situations of the game at each timestamp.
-It would reduce labor of manually creating caption graphics and appending them into a video using traditional authoring tools to obtain the same result.
+First application enables automatic cutting of a video by splitting a video into shorter movie clips classified as good or bad at the positions indicated by embedded annotations.
+Second application embeds geolocations of a camcorder into a video sequence every several seconds to visualize the route of the recorder and enable user to clip a section of a video using a map user interface.
+Third application automatically append overlaying graphics on a video of a board game using annotations representing situations of the game at each timestamp.
+% It would reduce labor of manually creating caption graphics and appending them into a video using traditional authoring tools to obtain the same result.
 
 % 評価
-Since our annotation method uses watermarking technique, reliability for embedding data and durability for format conversion are important in practical use.
+Since our annotation method uses watermarking technique, reliability for embedding data and durability against format conversion are important in practical use.
 An adequate degree of transparency of watermarks is also needed to guarantee the perceptual quality of contents.
-In this thesis, we present the results of a series of performance evaluations of our method.
+In this thesis, we present the results of a series of performance evaluations using an actual hardware setup including a consumer-use camcorder and a smartphone.

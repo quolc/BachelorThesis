@@ -1,11 +1,11 @@
 % 既存の音声透かし手法は適用できない
 To enable embedding annotations for audio/visual editing in audio data, we owe fundamental idea for converting a digital data into an acoustic representation to existing audio watermarking techniques.
-However, some significant differences between basic audio watermarking and embedding annotation for editing support make it difficult to apply the techniques straightforwardly to our purpose.
+However, some significant differences between ordinary audio watermarking and embedding annotation for editing support make it difficult to apply the techniques straightforwardly to our purpose.
 
 % ビデオ録画時に埋め込むので要請が異なる
 In principle, the purpose of watermarking techniques is to add extra information like indication of intellectual property rights to existing contents by means of signal processing, therefore usually watermarking is conducted in the post-production stage.
-On the other hand, our purpose requires embedding extra data in the audio track of a video during shooting it with a video camera. % to record annotations of a scene to support content creation.
-Because of it, our recording-time watermarking has different technical requirements from basic audio watermarking techniques.
+On the other hand, our purpose requires embedding extra data in the audio track of a video while shooting it with a video camera. % to record annotations of a scene to support content creation.
+It gives our recording-time watermarking distinctive technical requirements from basic audio watermarking techniques.
 
 % 特殊なデバイスが使えない
 Firstly, any requirements of extra equipment like specialized camera are not desirable.
@@ -15,25 +15,25 @@ Secondly, host signal cannot be modified to embed data in our recording-time wat
 % Recently some techniques called {\it real-time watermarking} have been presented. Though these techniques realize real-time embedding of watermarking in contents, they are not suited for our purpose because they require extra equipment for digital signal processing.
 % real-time watermarkingの話はrelated worksでしているので言及不要
 % 耐攻撃性は不要
-Thirdly, since our watermarks are used only in editing process, durability and transparency of watermarks is not very important, unlike ordinary watermarks are required to be hidden and resistant to elimination because most of them are embedded to contain essential information for preserving the content from abuses.
+Thirdly, since our watermarks are used only in editing process, durability and transparency of watermarks are not very important, unlike ordinary watermarks are required to be hidden and resistant to elimination because most of them are embedded to contain essential information for preserving the content from abuses.
 In contrast to ordinary watermarks, watermarks for editing support should be able to be eliminated completely after the editing process because they have no immediate value for consumers of contents.
 
 % これらの条件から、host signalを書き換えられないので、加算的に合成することにした
 % watermarkingに用いた周波数成分は上書きされて消えてしまうので、聴取に影響を与えないことが問題
-According to these preconditions, we decided to use modulated tones of certain frequency bands for watermarking, making watermarking process significantly simple as generating encoded tones from input data, transmitting them from a speaker near the microphone of a camera, and recording them as environmental sounds.
+According to these preconditions, we decided to use modulated tones of certain frequency bands for watermarking, making watermarking process significantly simple as generating encoded tones from digital data, transmitting them from a speaker near the microphone of a camera, and recording them as environmental sounds.
 In this process, watermark signals and host signals are mixed in air like {\it sonic watermarking} by Tachibana. \cite{tachibana2003audio}
-Removal of watermarks can also be simplified because eliminating certain frequency component from an audio signal can be done easily by applying a band elimination filter (BEF).
-One problem is that, since certain frequency components of host signal would be overwritten by the watermark signals and also be eliminated in removing watermarks, we should decide frequency range to use not to spoil listening impressions.
+Removal of watermarks can also be simplified because eliminating certain frequency component from an audio signal can be done easily by applying an appropriate digital filter.
+One problem is that, since certain frequency components of host signal would be overwritten by the watermark signals and also be eliminated in removing watermarks, we should select the frequency range not to spoil listening impressions.
 
 % 前提条件
 % ところで音声ファイルは44.1kHzで収録されるが、人は16kHzくらいまでしか聴こえない…
 Most of common media formats use 44.1 kHz as their audio sampling rate, and virtually all video cameras and audio recorders can record sounds in this rate. It means that we can record media files that contain sounds with frequency up to 22.05 kHz with common equipment, since a discrete signal can contain sampled signals with frequencies lower than half of its sampling rate, according to the Nyquist-Shannon sampling theorem \cite{shannon1949communication}.
 Human's hearing range is well-known to be between 20 Hz and 20 kHz, but some studies showed that absolute threshold of hearing (ATH) increases rapidly along with the frequency above 14 kHz and some people can not notice sounds above 18 kHz completely. \cite{:/content/asa/journal/jasa/86/4/10.1121/1.398698, ashihara2006hearing}
-% in practice, sounds with frequencies higher than about 18000 Hz cannot noticed by ordinary people unless they are informed the appearance of sounds in advance.
+% in practice, sounds with frequencies higher than about 18,000 Hz cannot noticed by ordinary people unless they are informed the appearance of sounds in advance.
 Because of these facts, digital data can be recorded in an audio sequence almost imperceptibly to human with common video cameras, if they are converted to audio signals with frequencies between about 18 kHz and 22 kHz.
 
 % カメラに装着したスマートフォンをトランスミッタとして用いる
-In our system named AnnoTone, annotation data are converted to inaudible modulated sounds in a frequency band between 17600Hz and 20000Hz, and transmitted to a microphone of a video camera from a speaker of a smartphone attached to the camera.
+In our system named AnnoTone, annotation data are converted to inaudible modulated sounds in a frequency band between 17,600Hz and 20,000Hz, and transmitted to a microphone of a video camera from a speaker of a smartphone attached to the camera.
 % GPSや加速度センサーをはじめとしたスマートフォンのセンサー群やタッチパネルUIの入力をアノテーションとして吹き込むことが出来る
 A type of annotation data can vary depending on its usage, for example, values of various sensors carried on a smartphone such as GPS and accelerometer can be coded, and user inputs from user interfaces displayed on a touch panel of a smartphone are also available to make annotations.
 % 異なるアノテーションは別々のアプリを用いて吹き込むが、透かし生成処理はライブラリ化されている

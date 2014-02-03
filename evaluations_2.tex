@@ -12,10 +12,10 @@ Taking it into consideration, we conducted following experiments in four differe
 % 各watermarkはランダムな16bytesのデータで、3秒おきに100個のwatermarkを連続で埋め込んでデコードした
 Firstly, we measured CDRs changing the data rate of watermarking to evaluate how much data can be embedded per unit time stably.
 Since the length of a data frame decides the data rate of watermarking, we changed it from 6 ms to 10 ms at 1 ms intervals.
-6 ms length of a data frame corresponds to the data rate of about 666 bps, and 10 ms corresponds to 400 bps.
-For each data frame lengths and environmental settings, one hundred watermarks with 16 bytes payloads were embedded at 3 seconds intervals, and the correctly detected watermarks were counted after recording.
+6 ms length of a data frame corresponds to about 666 bps data rate, and 10 ms corresponds to 400 bps.
+For each data frame lengths and environmental settings, one hundred watermarks with 16 bytes payloads were embedded at 3 seconds intervals, and the correctly detected watermarks were counted using our watermark decoder after recordings.
 Figure \ref{fig:eval_reli_btrt} shows the measured CDRs in each condition.
-This result shows that enough reliability can be gained in any recording environments if the data frame length is set more than 10 ms.
+This result shows that enough reliability can be gained in any recording environments if the data frame length is set 10 ms.
 CDRs dropped rapidly as data frame length decreased below 10 ms, especially in the environment with electronic music.
 It is probably due to the high-frequency tones contained in the music that confuse watermark detector.
 From the result, we concluded that 10 ms was the optimal value for the length of a data frame.
@@ -35,9 +35,9 @@ Secondly, we conducted a similar experiment changing the payload length of a pac
 % 8, 16, 32, 64, 128 bytes の5条件
 In this experiment, one hundred watermarks with a certain payload length from 8 bytes to 128 bytes were recorded in a video, and the CDR was measured later.
 % data frame lengthは10msに固定
-Data frame length of watermarks was fixed 10 ms.
+The data frame length of watermarks was fixed 10 ms.
 % 結果
-The result shown in Figure \ref{fig:eval_reli_pyld} demonstrates that CDR slightly decreases with payload length increasing, but retained above 95\% at all payload lengths and situations.
+The result shown in Figure \ref{fig:eval_reli_pyld} demonstrates that CDR was slightly decreased with payload length increasing, but retained above 95\% at all payload lengths and situations.
 % 色々なタイプのデータを格納するのに利用することが出来る
 This means that our method can be used to embed many kinds of annotations with various data sizes, from an integer value to a long string like a caption sentence.
 

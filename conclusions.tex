@@ -1,6 +1,6 @@
-\chapter{Conclusions and Future Work}
+\chapter{Conclusions}
 
-% [contribution]
+\section{Contributions of our Research}
 % 本論文で我々はAnnoToneというビデオアノテーションシステムとその具体的な応用例を示した。
 In this thesis, we proposed a video annotating system named AnnoTone, and practical video editing applications using this system.
 % 我々のコントリビューションは以下の３点に要約できる
@@ -11,10 +11,10 @@ Our contributions in this research would be summarized in following three points
 % 2. アノテーションのために特化したaudio watermarking schemeを開発し、性能を評価した
 \item We developed a DTMF-based audio watermarking scheme suited to annotate videos for supporting movie content creation, and conducted quantitative evaluations on its performance in actual situations.
 % 3. 録画時アノテーションを用いた新しい動画制作手法を提案し、実用性のあるアプリケーションを複数示した
-\item We showed practicability of our annotation system by suggesting video editing applications that utilize contextual information embedded in videos to provide rich user interfaces and automate editing processes.
+\item We showed usefulness of our annotation system by suggesting video editing applications that utilize contextual information embedded in videos to provide rich user interfaces and automate editing processes.
 \end{itemize}
 % 各アプリケーションが示すこと
-The first example application suggested the concept of recording-time editing of movie contents, that is automation of editing process using clues embedded in a video by a camera user.
+The first example application suggested the concept of recording-time editing of movie contents, that is automation of editing process using clues embedded in a video by the camera operator.
 It would be a rapid way to make movie contents for creators.
 The second example demonstrated that our system can be used to provide various interaction styles for video editing that reflect semantics of videos and be more intuitive than traditional timeline-based editing systems.
 Such usage of annotations would have applications for not only creators but also consumers to interact with movie contents with enjoyable ways.
@@ -22,23 +22,23 @@ As the third example, annotations also can be used directly for generating suppl
 % 我々のシステムは少ない機材制約のために誰でもすぐに利用することができる
 Viewing from the standpoint of accessibility and versatility, our system has a large advantage owing to its small hardware constraint, and can be used by almost all creators with different purposes to support their work.
 
-% memo (limitations)
+\section{Limitations and Future Work}
 However, it seems true that there are some limitations for using our method in a professional work.
 % 1. プロフェッショナルレベルのプロダクションを作るには、watermarkの痕跡を完全に消すことは出来ない問題がある
 Firstly, still in most cases they are imperceptible to human, embedded watermarks are not completely transparent, and sometimes their high frequency sounds give strange feelings to a listener.
 Although our watermark deletion program can reduce the watermark sounds to unnoticeable volume, their traces can be seen by anyone after being deletion using a common digital audio editor like Audacity \cite{audacity}, and this seems somewhat unsuitable for distributed productions.
 On the other hand, however using other methods like downsampling can completely remove watermarks, they inevitably cause unignorable changes on listening quality.
-To solve these problems, we should develop a more elaborated technique to completely eliminate watermarks in future with small loss of quality by, for example, utilizing existing noise canceling technologies.
+To solve these problems, we should develop a more elaborated technique to completely eliminate watermarks with small loss of quality in future by, for example, applying existing noise canceling technologies.
 
 % 2. データを音声として出力するには遅延があるので、厳密なタイミング同期を要求する用途には使いにくい
 % ただし、同じハードウェアセッティング、ペイロード長に対しての遅延はほぼ一定なので、事前に計測して引いてあげれば対応は可能
 Delay from the calculation time for watermark signal generation and sound transmission restricts the precision of synchronization between a video sequence and embedded watermarks.
-Because of the limitation, it is not suited for our technique to record the accurate time of instant events such as a batting of baseball.
+Because of this limitation, it is not suited for our technique to record the accurate time of an instant event such as a batting of baseball.
 However, this delay could be partly compensated by estimating the duration of delay, since this is almost constant in fixed hardware setup and payload length.
 
 % 3. 機材制約は全くないわけではない。スマートフォンのスピーカーは高音をノイズ無く出力出来なければならないし、
 % カメラは高音をセンシングしてかつ適切なフォーマットで保存できる必要がある。
 Our technique has a smaller hardware constraint compared to existing techniques with similar purposes as mentioned above, although it is not zero.
 The speaker of a smartphone should be able to transmit high frequency sounds above hearing range with minimum audible noise, and the microphone of a camera should record them without attenuation of signals and save the audio sequence in adequate quality.
-We learned that some cheap instruments do not satisfy these requirements, for example, an out-of-date smartphone causes low frequency noises when it is transmitting a watermark, and a compact video camera records sound with a sampling rate below 44100 Hz.
+We learned that some cheap instruments do not satisfy these requirements, for example, an out-of-date smartphone causes low frequency noises when it is transmitting a watermark, and a compact video camera records sound with a sampling rate below 44.1 kHz.
 Nevertheless, we think that this is not a major problem, because more and more high-performance instruments are provided in low price due to the fast advance of electronics.

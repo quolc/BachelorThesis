@@ -13,7 +13,7 @@ Taking it into consideration, we conducted following experiments in four differe
 Firstly, we measured CDRs changing the data rate of watermarking to evaluate how much data can be embedded per unit time stably.
 Since the length of a data frame decides the data rate of watermarking, we changed it from 6 ms to 10 ms at 1 ms intervals.
 6 ms length of a data frame corresponds to about 666 bps data rate, and 10 ms corresponds to 400 bps.
-For each data frame lengths and environmental settings, one hundred watermarks with 16 bytes payloads were embedded at 3 seconds intervals, and the correctly detected watermarks were counted using our watermark decoder after recordings.
+For each data frame lengths and environmental settings, one hundred watermarks with 16 bytes payloads were embedded at 3 seconds intervals, and the correctly detected watermarks were counted using our watermark extractor after recordings.
 Figure \ref{fig:eval_reli_btrt} shows the measured CDRs in each condition.
 This result shows that enough reliability can be gained in any recording environments if the data frame length is set 10 ms.
 CDRs dropped rapidly as data frame length decreased below 10 ms, especially in the environment with electronic music.

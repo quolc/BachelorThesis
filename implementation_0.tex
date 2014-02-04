@@ -1,0 +1,25 @@
+% 4つのコンポーネントで出来ている
+The system of AnnoTone consists of several software components, those are watermark generator, extractor, eraser, annotation interface and movie-editing interface.
+% annotation transmitter
+An annotation interface enables users to decide what to embed into a video as annotations, and sends them to a watermark generator to generate watermark signals representing them.
+These two components comprise a smartphone application that transmits watermark signals from a speaker of a smartphone to a microphone of a video camera.
+% extractor and editing interface
+Annotations embedded in a video recording are extracted by the watermark extractor and loaded into the movie-editing interface, and offer its user a variety of functions for creating movie contents.
+% erase
+Embedded watermarks can be removed from an audio track of a video by the watermark eraser when they become unnecessary after the editing process is finished.
+
+\begin{figure}[htbp]
+ \begin{center}
+  \vspace{5mm}
+  \includegraphics[width=135mm]{overview.pdf}
+ \end{center}
+ \caption{The schematic diagram of the system of AnnoTone}
+ \label{fig:one}
+\end{figure}
+
+% 汎用性
+Because we thought that our annotation method should be available for various kinds of applications depending on the purposes of users, watermark generator and extractor are provided as shared software libraries, and anyone can create a new application that exploits the value of annotations for movie-editing by only implementing the two interfaces.
+% 以下本章では、この共有ライブラリおよびeraserの実装についての説明を行う。
+We describe implementation of these shared libraries and watermark eraser in the rest of this chapter.
+% インターフェイスはアプリケーションごとに内容が異なるので、後ほどApplicationsの章で解説する。
+Because the two interfaces are application-dependent, we give detailed information about their examples in chapter 6, separately.

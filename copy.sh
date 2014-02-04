@@ -1,3 +1,4 @@
+cp iscs-thesis.* ~/VirtualBox\ VMs/Ubuntu/share/
 cp *.tex ~/VirtualBox\ VMs/Ubuntu/share/
 cp *.pdf ~/VirtualBox\ VMs/Ubuntu/share/
 cp *.png ~/VirtualBox\ VMs/Ubuntu/share/
